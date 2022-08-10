@@ -1,4 +1,3 @@
-from pprint import pprint
 from flight_search import FlightSearch
 
 
@@ -12,27 +11,26 @@ class FlightData:
                  max_return_time_days):
 
         """
-            Update to most current flight data for no stopovers and one stopover.
-
-            Parameters:
-                reference_flight_data_container (DataManger): Reference Flight Data object.
-                current_location (str): Current city location IATA code.
-                date_offset_in_week (int): Interval in weeks from current date in which to search flight information.
-                min_return_time_days (int): Shortest interval allowed between arrival and return flight.
-                max_return_time_days (int): Longest interval allowed between arrival and return flight.
+            Updates object with most current flight data for no stopovers and one stopover flights.
+                Parameters:
+                    reference_flight_data_container (DataManger): Reference Flight Data object.
+                    current_location (str): Current city location IATA code.
+                    date_offset_in_week (int): Interval in weeks from current date in which to search flight info.
+                    min_return_time_days (int): Shortest interval allowed between arrival and return flight.
+                    max_return_time_days (int): Longest interval allowed between arrival and return flight.
         """
 
-        self.reference_flight_data_container = reference_flight_data_container
-        self.current_location = current_location
-        self.date_offset_in_week = date_offset_in_week
-        self.min_return_time_days = min_return_time_days
-        self.max_return_time_days = max_return_time_days
+        self.__reference_flight_data_container = reference_flight_data_container
+        self.__current_location = current_location
+        self.__date_offset_in_week = date_offset_in_week
+        self.__min_return_time_days = min_return_time_days
+        self.__max_return_time_days = max_return_time_days
 
         # list of new low priced flights
         self.__destination_price_list = []
 
         # for each destination found in google sheets document
-        for ref_destination in self.reference_flight_data_container:
+        for ref_destination in self.__reference_flight_data_container:
 
             # try with no stopovers
             self.__new_flight_search = self.create_flight_search_obj(ref_destination, stop_overs=0)
@@ -68,7 +66,7 @@ class FlightData:
                                                                                      route_list))
 
                 except IndexError:
-                    print(f"No available fight from {self.current_location} to {ref_destination['city']}")
+                    print(f"No available fight from {self.__current_location} to {ref_destination['city']}")
 
     def create_flight_search_obj(self, ref_destination, stop_overs):
 
@@ -78,12 +76,12 @@ class FlightData:
                     ref_destination (DataManager): Reference flight prices and locations in which to search.
         """
 
-        flight_search = FlightSearch(flight_from=self.current_location,
+        flight_search = FlightSearch(flight_from=self.__current_location,
                                      flight_to=ref_destination["iataCode"],
-                                     week_range=self.date_offset_in_week,
+                                     week_range=self.__date_offset_in_week,
                                      price_to=ref_destination["lowestPrice"],
-                                     min_return_time_days=self.min_return_time_days,
-                                     max_return_time_days=self.max_return_time_days,
+                                     min_return_time_days=self.__min_return_time_days,
+                                     max_return_time_days=self.__max_return_time_days,
                                      stop_overs=stop_overs
                                      )
 

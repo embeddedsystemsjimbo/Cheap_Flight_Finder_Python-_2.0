@@ -11,19 +11,24 @@ tequila_endpoint = "https://tequila-api.kiwi.com/v2/search"
 class FlightSearch:
 
     """
-        Gets current flight information from Kiwi.com using the Tequila API
-            Parameters:
-                flight_from (str): Current location.
-                flight_to (str):  Destination location.
-                week_range (int): Interval in weeks from current date in which to search flight information.
-                price_to (int) : Maximum flight price to search.
-                min_return_time_days (int): Shortest interval allowed between arrival and return flight.
-                max_return_time_days (int): Longest interval allowed between arrival and return flight.
-                stop_overs (int): Number of connecting flights allowed.
+        Gets current flight data from Kiwi.com using the Tequila API.
+        Provides helper functions to get current date and determine offset_date.
     """
 
     def __init__(self, flight_from, flight_to, week_range, price_to, min_return_time_days, max_return_time_days,
                  stop_overs):
+
+        """
+            Updates object with flight data from Kiwi.com using the Tequila API
+                Parameters:
+                    flight_from (str): Current location.
+                    flight_to (str):  Destination location.
+                    week_range (int): Interval in weeks from current date in which to search flight information.
+                    price_to (int) : Maximum flight price to search.
+                    min_return_time_days (int): Shortest interval allowed between arrival and return flight.
+                    max_return_time_days (int): Longest interval allowed between arrival and return flight.
+                    stop_overs (int): Number of connecting flights allowed.
+        """
 
         self.__flight_from = flight_from,
         self.__flight_to = flight_to

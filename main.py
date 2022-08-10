@@ -1,4 +1,3 @@
-from pprint import pprint
 from notification_manager import NotificationManager
 from data_manager import DataManager
 from flight_data import FlightData

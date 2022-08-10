@@ -3,7 +3,7 @@ import os
 
 
 HEADER = {
-    "Authorization": os.environ.get("SHEETY_API_KEY"),
+    "Authorization": os.environ.get("SHEETY_API_KEY"),  # import environmental variable
     "Content_Type": "application/json"
 }
 
