@@ -1,6 +1,6 @@
 # Cheap_Flight_Finder_Python-_2.0
-Upgraded version of the Cheap_Flight_Finder_Python.
+Upgraded version of the Cheap_Flight_Finder_Python into a functional "Flight Deal Club" app. 
 
-Improvements include:
-1) Differentiating between direct flights and non direct flights. Route breakdown for non direct flight given. 
-2) 
+Users can now register their name and email with the "Flight Club" app. Direct and single stopover non direct flight deals are emailed to all users registered with the app. 
+
+
