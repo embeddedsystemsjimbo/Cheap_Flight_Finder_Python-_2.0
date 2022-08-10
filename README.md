@@ -20,6 +20,8 @@ https://www.twilio.com
 
 https://sheety.co
 
+***
+
 <img width="775" alt="image" src="https://user-images.githubusercontent.com/76194492/183819392-4f8928ac-c1ad-4b1c-bebc-52f81228331a.png">
 Figure 1: Example of User registration.
 
