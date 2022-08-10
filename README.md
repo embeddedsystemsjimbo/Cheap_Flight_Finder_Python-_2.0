@@ -42,7 +42,7 @@ Figure 3: Reference destination list with lowest price stored within Google Shee
 ***
 ![image](https://user-images.githubusercontent.com/76194492/183820300-c2f4047e-f78f-4fc7-83f2-0080960cc281.png)
 
-Figure 4: Flight deal sample.
+Figure 4: Flight deal sample email.
 
 
 ***
