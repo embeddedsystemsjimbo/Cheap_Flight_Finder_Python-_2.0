@@ -28,7 +28,7 @@ Figure 1: Example of User registration.
 
 ***
 
-![image](https://user-images.githubusercontent.com/76194492/183819721-7952681e-9111-40e5-913a-83451ccdbb6a.png)
+![image](https://user-images.githubusercontent.com/76194492/183822884-2836fd34-a1ed-4a18-97db-49d364202d52.png)
 
 Figure 2: User data stored within Google Sheets document.
 
