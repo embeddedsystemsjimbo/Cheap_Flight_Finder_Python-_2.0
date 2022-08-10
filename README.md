@@ -60,4 +60,4 @@ Figure 6: Direct flight sample email.
 
 ![image](https://user-images.githubusercontent.com/76194492/183822524-cc746825-dc93-4f85-94b8-cb9e285da340.png)
 
-Figure 7: Opened hyperlink sample.  
+Figure 7: Opened flight deal hyperlink sample.  
