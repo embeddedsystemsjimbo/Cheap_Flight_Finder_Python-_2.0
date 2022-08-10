@@ -23,22 +23,26 @@ https://sheety.co
 ***
 
 <img width="775" alt="image" src="https://user-images.githubusercontent.com/76194492/183819392-4f8928ac-c1ad-4b1c-bebc-52f81228331a.png">
+
 Figure 1: Example of User registration.
 
 ***
 
 ![image](https://user-images.githubusercontent.com/76194492/183819721-7952681e-9111-40e5-913a-83451ccdbb6a.png)
+
 Figure 2: User data stored within Google Sheets document.
 
 
 ***
 
 ![image](https://user-images.githubusercontent.com/76194492/183819523-1bb47068-fc44-4246-8792-5275ed7292af.png)
+
 Figure 3: Reference destination list.
 
 ***
 
 ![image](https://user-images.githubusercontent.com/76194492/183820001-bab189b6-3f6d-4d95-9c12-1aa8a9da18aa.png)
+
 Figure 4: Sample Flight Deal email. 
 
 
