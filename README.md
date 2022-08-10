@@ -9,7 +9,7 @@ Destinations with no flight deals are printed to console (See Figure 1).
 
 Flights are selected with a minimum trip duration of seven days and a maximum duration of thirty days.
 
-If the app finds a flight that is cheaper than the historic lowest price for a certain destination, the app sends a customized email to registered users containing the user’s name, the route if it is a non-direct flight and a hyperlink to kiwi.com to book a flight (See Figure 4, 5, 6).
+If the app finds a flight that is cheaper than the historic lowest price for a certain destination, the app sends a customized email to registered users containing the user’s name, the route if it is a non-direct flight and a hyperlink to kiwi.com to book a flight (See Figure 4, 5, 6, 7).
 
 
 For more info see the links below:
@@ -56,3 +56,8 @@ Figure 5: Non-direct flight sample email.
 ![image](https://user-images.githubusercontent.com/76194492/183820472-c0f34e95-4f3f-4077-998b-c090b2fc6716.png)
 Figure 6: Direct flight sample email.  
 
+***
+
+![image](https://user-images.githubusercontent.com/76194492/183822524-cc746825-dc93-4f85-94b8-cb9e285da340.png)
+
+Figure 7: Opened hyperlink sample.  
