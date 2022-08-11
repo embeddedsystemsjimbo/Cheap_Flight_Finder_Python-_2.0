@@ -73,5 +73,4 @@ class DataManager:
         user_list = [user for user in response["sheet1"]]
 
         return user_list
-
-
+    
