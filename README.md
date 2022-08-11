@@ -47,13 +47,13 @@ Figure 4: Flight deal sample email.
 
 ***
 
-![image](https://user-images.githubusercontent.com/76194492/184042772-07b38278-9967-4208-917a-1a5a80f0052d.png)
+<img width="1462" alt="image" src="https://user-images.githubusercontent.com/76194492/184047192-aeb05714-50d5-422b-aeb8-194dad020e0e.png">
 
 Figure 5: Non-direct flight sample email. 
 
 ***
 
-![image](https://user-images.githubusercontent.com/76194492/184042829-4f78e960-f00c-4c64-aba7-241bec50c35c.png)
+<img width="1462" alt="image" src="https://user-images.githubusercontent.com/76194492/184047169-93418c34-5fb5-43db-9205-bd43ddf9fe3a.png">
 
 Figure 6: Direct flight sample email.  
 
