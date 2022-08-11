@@ -34,13 +34,11 @@ class FlightData:
 
             # try with no stopovers
             self.__new_flight_search = self.create_flight_search_obj(ref_destination, stop_overs=0)
-
             search_result = self.__new_flight_search.get_flight_data()
 
             try:
-
                 # FlightSearch only returns 1 search result hence [0] index
-                self.__destination_price_list.append(self.write_to_dict_nonstop(search_result["data"][0]))
+                self.__destination_price_list.append(self.write_to_dict(search_result["data"][0]))
 
             except IndexError:
 
@@ -49,21 +47,8 @@ class FlightData:
                 search_result = new_flight_search.get_flight_data()
 
                 try:
-                    route_list = []
-                    for route in search_result["data"][0]["route"]:  # test for exception ... check if "route" list
-
-                        # check if there is a route data available
-                        if route:
-                            route_list.append({
-                                "cityCodeFrom": route["cityCodeFrom"],
-                                "cityCodeTo": route["cityCodeTo"],
-                                "cityFrom": route["cityFrom"],
-                                "cityTo": route["cityTo"]
-                            })
-
                     # FlightSearch only returns 1 search result hence [0] index
-                    self.__destination_price_list.append(self.write_to_dict_stopover(search_result["data"][0],
-                                                                                     route_list))
+                    self.__destination_price_list.append(self.write_to_dict(search_result["data"][0]))
 
                 except IndexError:
                     print(f"No available fight from {self.__current_location} to {ref_destination['city']}")
@@ -87,46 +72,36 @@ class FlightData:
 
         return flight_search
 
-    def write_to_dict_nonstop(self, destination):
+    def write_to_dict(self, destination):
 
         """
-            Convert Flight data of interest in to dict for nonstop flights.
+            Convert Flight data of interest into dictionary.
                 Parameter:
-                    destination (FlightSearch): FlightSearch data object for given reference destination.
+                    destination (FlightSearch): FlightSearch data object for derived from reference destination list.
                 Returns:
-                    fight_dict (dict): Dictionary containing flight data of interest pertaining to non_direct flights.
+                    fight_dict (dict): Dictionary containing flight data of interest.
         """
+        # simplify routes list provided by Tequila API
+        route_list = []
+        for route in destination["route"]:
 
+            route_list.append({
+                "cityCodeFrom": route["cityCodeFrom"],
+                "cityCodeTo": route["cityCodeTo"],
+                "cityFrom": route["cityFrom"],
+                "cityTo": route["cityTo"],
+                "local_arrival": route["local_arrival"][:10],
+                "local_departure": route["local_departure"][:10],
+                "local_arrival_time": route["local_arrival"][11:16],
+                "local_departure_time": route["local_departure"][11:16]
+            })
+
+        # simplify data list provided by Tequila API
         flight_dict = {"from_location": destination["cityFrom"],
                        "to_location": destination["cityTo"],
                        "from_IATA": destination["cityCodeFrom"],
                        "to_IATA": destination["cityCodeTo"],
                        "price": destination["price"],
-                       "current_date": self.__new_flight_search.get_date(),
-                       "offset_date": self.__new_flight_search.get_offset_date(),
-                       "link": destination["deep_link"]
-                       }
-
-        return flight_dict
-
-    def write_to_dict_stopover(self, destination, route_list):
-
-        """
-            Convert Flight data of interest in to dict for non-direct flights
-                Parameter:
-                    destination (FlightSearch): FlightSearch data object for given reference destination.
-                    route_list (list): List of route dictionaries travelled through via non-direct flight.
-                Returns:
-                    fight_dict (dict): Dictionary containing flight data of interest pertaining to non-direct flights.
-        """
-
-        flight_dict = {"from_location": destination["cityFrom"],
-                       "to_location": destination["cityTo"],
-                       "from_IATA": destination["cityCodeFrom"],
-                       "to_IATA": destination["cityCodeTo"],
-                       "price": destination["price"],
-                       "current_date": self.__new_flight_search.get_date(),
-                       "offset_date": self.__new_flight_search.get_offset_date(),
                        "route": route_list,
                        "link": destination["deep_link"]
                        }

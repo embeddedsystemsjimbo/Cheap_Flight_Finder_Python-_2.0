@@ -24,7 +24,7 @@ class DataManager:
                                                 city codes and  lowest flight prices.
         """
 
-        flights_endpoint = "https://api.sheety.co/f68fee8fa771367fe4465717a6e4dc6e/flightsDeals/sheet1"
+        flights_endpoint = "https://api.sheety.co/c94a37da3d2003455b7481485ad51b7d/flightDeals/sheet1"
 
         response = requests.get(url=flights_endpoint, headers=HEADER).json()
 
@@ -43,7 +43,7 @@ class DataManager:
                           email (str) : User's last name.
           """
 
-        users_endpoint = "https://api.sheety.co/f68fee8fa771367fe4465717a6e4dc6e/flightUsers/sheet1"
+        users_endpoint = "https://api.sheety.co/c94a37da3d2003455b7481485ad51b7d/flightUsers/sheet1"
 
         # Sheety camelCases all JSON keys, so a header named "First Name" will become "firstName".
 
@@ -66,7 +66,7 @@ class DataManager:
                     response (list-dict) : Return registered user data including First_Name, Last_Name and Email.
         """
 
-        user_list_endpoint = "https://api.sheety.co/f68fee8fa771367fe4465717a6e4dc6e/flightUsers/sheet1"
+        user_list_endpoint = "https://api.sheety.co/c94a37da3d2003455b7481485ad51b7d/flightUsers/sheet1"
 
         response = requests.get(url=user_list_endpoint, headers=HEADER).json()
 

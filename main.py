@@ -30,22 +30,28 @@ def get_flight_data():
 
     for current_fight in current_flight_data:
 
-        try:
+        if len(current_fight['route']) == 3:
 
             message = f"Low Price alert! Only ${current_fight['price']}US to fly from " \
                       f"{current_fight['from_location']}-{current_fight['from_IATA']} to " \
                       f"{current_fight['to_location']}-{current_fight['to_IATA']} non" \
                       f"-direct through {current_fight['route'][0]['cityTo']}-" \
                       f"{current_fight['route'][0]['cityCodeTo']}  " \
-                      f"{current_fight['current_date']} to {current_fight['offset_date']} \n\n" \
+                      f"{current_fight['route'][0]['local_departure']} at time " \
+                      f"{current_fight['route'][0]['local_departure_time']} to "  \
+                      f"{current_fight['route'][2]['local_departure']} at time " \
+                      f"{current_fight['route'][2]['local_departure_time']}. \n\n" \
                       f"{current_fight['link']}"
 
-        except KeyError:
+        else:
 
             message = f"Low Price alert! Only ${current_fight['price']}US to fly direct from " \
                       f"{current_fight['from_location']}-{current_fight['from_IATA']} to " \
                       f"{current_fight['to_location']}-{current_fight['to_IATA']} between " \
-                      f"{current_fight['current_date']} to {current_fight['offset_date']} \n\n" \
+                      f"{current_fight['route'][0]['local_departure']} at time " \
+                      f"{current_fight['route'][0]['local_departure_time']} to " \
+                      f"{current_fight['route'][1]['local_departure']} at time " \
+                      f"{current_fight['route'][1]['local_departure_time']}. \n\n" \
                       f"{current_fight['link']}"
 
         send_email(message)
