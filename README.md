@@ -9,9 +9,9 @@ Destinations with no flight deals are printed to console (See Figure 1).
 
 Flights are selected with a minimum trip duration of seven days and a maximum duration of thirty days.
 
-Flight searches are processed over a six month period starting from thr current date.
+Flight searches are processed over a six month period starting from the current date.
 
-If the app finds a flight that is cheaper than the historic lowest price for a certain destination, the app sends a customized email to registered users containing the user’s name, the flight route, the date and time of departure and return flights and a hyperlink to kiwi.com to book a flight (See Figure 4, 5, 6, 7).
+If the app finds a flight that is cheaper than the historic lowest price for a certain destination, the app sends a customized email to registered users containing the user’s name, the flight route, the date and time of flight departures round trip and a hyperlink to kiwi.com to book a flight (See Figure 4, 5, 6, 7).
 
 
 For more info see the links below:
