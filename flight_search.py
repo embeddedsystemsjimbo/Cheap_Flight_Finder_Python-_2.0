@@ -13,6 +13,7 @@ class FlightSearch:
     """
         Gets current flight data from Kiwi.com using the Tequila API.
         Provides helper functions to get current date and determine offset_date.
+        See __init__ for details.
     """
 
     def __init__(self, flight_from, flight_to, week_range, price_to, min_return_time_days, max_return_time_days,

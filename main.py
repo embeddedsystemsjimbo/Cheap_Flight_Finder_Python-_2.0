@@ -70,7 +70,6 @@ def send_email(message):
 
 
 while app_is_running:
-    
     print(logo)
     print("\n\nWelcome to Brandon's Flight Club. \n"
           "We find the best flight deals and email you.")

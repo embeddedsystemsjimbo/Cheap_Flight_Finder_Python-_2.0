@@ -5,6 +5,7 @@ class FlightData:
 
     """
         Provides helper methods to get and organize reference and flight data.
+        See __init__ for details.
     """
 
     def __init__(self, reference_flight_data_container, current_location, date_offset_in_week, min_return_time_days,
